@@ -6,6 +6,8 @@ import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
+import { TodoLoading } from '../TodoLoading';
+import { EmptyTodos } from '../EmptyTodos';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
@@ -19,11 +21,10 @@ export function AppUI() {
 
             <TodoSearch />
 
-            
             <TodoList>
                 {error &&  <p>Desespérate, hubo un error...</p>}
-                {loading &&  <p>Estamos cargando, no desesperes..</p>}
-                {(!loading && !searchedTodos.length) &&  <p>Crea tu primer todo!!</p>}
+                {loading &&  Array(4).fill(0).map((item, index) => (<TodoLoading key={index} />))}
+                {(!loading && !searchedTodos.length) &&  <EmptyTodos />}
 
                 {searchedTodos.map(todo => (
                 <TodoItem 
