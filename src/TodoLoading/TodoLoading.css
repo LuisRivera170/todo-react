@@ -1,4 +1,4 @@
-.LoadingTodo-container , .EmptyTodo-container  {
+.LoadingTodo-container , .TodoError-container  {
     background: linear-gradient(90deg, rgba(250, 250, 250, 1), rgb(200, 199, 199));
     background-size: 400% 400%;
     animation: loadingAnimation 3s ease-in-out infinite;
@@ -9,6 +9,7 @@
     margin-top: 24px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
     height: 48px;
+    border-radius: 5px;
 }
 
 @keyframes loadingAnimation {
@@ -25,10 +26,14 @@
     }
 }
 
-.LoadingTodo-text , .EmptyTodo-text {
+.LoadingTodo-text , .TodoError-text {
     text-align: center;
     width: calc(100% - 120px);
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
+}
+
+.TodoError-text {
+    color: black;
 }
