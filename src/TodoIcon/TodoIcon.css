@@ -8,8 +8,8 @@
 }
 
 .Icon-container--check {
-    position: absolute;
-    left: 12px;
+    position: relative;
+    
 }
 
 .Icon-container--delete {
